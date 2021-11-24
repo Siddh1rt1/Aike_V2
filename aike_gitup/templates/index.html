@@ -1,0 +1,195 @@
+<!doctype html>
+
+<head> 
+  <script src="jquery-3.5.1.min.js"></script>
+    <title>AIke</title> 
+      <meta charset=utf-8> 
+      <script   src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="static/css/main.css"> 
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+            <script> document.getElementById('story').style.height="800px";
+            </script>
+
+</head>
+
+<body>
+  <h1 style="color:#FFFFFF">Witze generieren mit AIke</h1>
+        <title>AIke</title>
+
+    <div class ="computergif">
+      <img src = gifstoff alt="Start your own" id ="computer" />
+   </div>
+    <script>
+          gifstoff = "static/input.gif"
+          document.getElementById("computer").src = gifstoff
+    </script>
+
+</form>
+<script>
+<script>
+ $(document).ready(function() {
+  $('.toggle').click(function() {
+   var current_status = $('.status').text();
+   $.ajax({
+    url: "/get_toggled_status",
+    type: "get",
+     data: {status: current_status},
+     success: function(response) {
+      $(".status").html(response);
+     },
+     error: function(xhr) {
+      //Do Something to handle error
+     }
+   });
+  });
+});
+</script>
+
+</script>
+
+  <div class=textside>
+        <form method="POST">
+
+          <form name="radio" id = "radio">
+            <p>Select mode:</p>
+  
+            <div>
+              <input type="radio" id="radio1" name="radio" value="normal" {{checked1}}>
+              <label for="huey">normal</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="radio2" name="radio" value="Oneliner" {{checked2}}>
+              <label for="dewey">Oneliner</label>
+            </div>
+            
+            <div>
+              <input type="radio" id="radio3" name="radio" value="Klassisch"{{checked3}}>
+              <label for="louie">Klassisch</label>
+            </div>
+  
+            <div>
+              <input type="radio" id="radio4" name="radio" value="Aggro"{{checked4}}>
+              <label for="louie">Aggro</label>
+            </div>
+        
+            <input id="text" input name="text" value={{input_variable}}>
+
+            <input id="text2" input name="text2" value={{timer_variable}}>
+            <p2 id="text2_p2">
+            </p2>
+              <input id="text3" input name="text3" value={{words_variable}}>
+            <input type="submit" input>
+        <script>
+         document.getElementById("text2_p2").value = x;
+         function lookattext(x){
+           if (x=0){
+            document.getElementById("text2").value=4;
+           }
+          else
+         {document.getElementById("text2").value=x;
+          }
+        }
+        </script>   
+        
+        </form>
+
+      <scrupt>
+    
+      
+      </scrupt>
+        <form>
+          <!-- Rounded switch -->
+          <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+          </label>
+        </form>
+        <form>
+        <input type="checkbox" class='toggle' checked data-toggle="toggle">
+    <div class='status'>Toggled</div>
+    <script>
+      $(document).ready(function() {
+       $('.toggle').click(function() {
+        var current_status = $('.status').text();
+        $.ajax({
+         url: "/get_toggled_status",
+         type: "get",
+          data: {status: current_status},
+          success: function(response) {
+           $(".status").html(response);
+          },
+          error: function(xhr) {
+           //Do Something to handle error
+          }
+        });
+       });
+     });
+     </script>
+
+        <p style="color:#FFFFFF">Training und Vorhersage</p>
+    
+        <textarea id="story"   name="story" rows="10" cols="110" >{{data}}</textarea>
+        
+       
+      </form>
+      <form>
+      <textarea id="storyadd"   name="story" rows="1" cols="110" ></textarea>
+    </form>
+       <script>
+        
+        
+        function addVal(){
+        document.getElementById('storyadd').value = texto
+        }
+
+
+       </script>
+
+
+      <button onclick="typeWriter()">Strukturanalyse</button>
+      
+      <p id="demo"></p>
+      
+      <script>
+      var lustiger =  Math.floor(Math.random() * 10)+Math.floor(Math.random()*100)+Math.floor(Math.random()*800);
+      var texto = "Dieser Witz ist mindestens " + lustiger + " % besser als einer von 'echter' Eike";
+      var i = 0;
+      var txt = texto;
+      var speed = 50;
+      
+        function typeWriter() {
+        if (i < txt.length) {
+          document.getElementById("storyadd").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      } </script>
+
+    <p id="demo"></p>
+    <script>
+    document.getElementById("demo").innerHTML =
+    obj.employees[1].firstName + " " + obj.employees[1].lastName;
+    </script>
+
+  <br>
+  <pre id="output"></pre>
+    <script type="text/javascript">
+      document.getElementById('inputfile')
+          .addEventListener('change', function() {
+          var fr=new FileReader();
+          fr.onload=function(){
+              document.getElementById('output')
+                      .textContent=fr.result;
+          }
+            
+      fr.readAsText(this.files[0]);
+      })
+    </script>
+    </body>

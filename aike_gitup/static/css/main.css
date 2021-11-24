@@ -1,0 +1,27 @@
+body {background-color: #121212;
+}
+body {
+  font-family: Source Code Pro}
+.story {
+    width: 800px;
+    height: 500px;
+    float: left;
+  }
+  
+
+.computergif {
+  width: 800px;
+  height: 500px;
+  float: right;
+}
+.float-container {
+  border: 3px solid #fff;
+  padding: 20px;
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  padding: 20px;
+  border: 2px solid red;
+}  
